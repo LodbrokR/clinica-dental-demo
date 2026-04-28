@@ -1,0 +1,38 @@
+---
+const links = [
+  { text: 'Inicio', href: '/' },
+  { text: 'Servicios', href: '/servicios' },
+  { text: 'Equipo', href: '/equipo' },
+  { text: 'Ubicación', href: '/ubicacion' },
+];
+---
+
+<header class="fixed w-full top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/50 transition-all">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 group">
+      <div class="w-10 h-10 bg-brand-500 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:rotate-12 transition-transform shadow-lg shadow-brand-500/20">CD</div>
+      <span class="font-bold text-xl tracking-tight text-slate-900">Sonrisas<span class="text-brand-500">Pro</span></span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      <ul class="flex items-center gap-6 text-sm font-medium text-slate-600">
+        {links.map(link => (
+          <li><a href={link.href} class="hover:text-brand-600 transition-colors py-2">{link.text}</a></li>
+        ))}
+      </ul>
+      <a href="/reservas" class="bg-brand-600 hover:bg-brand-500 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md shadow-brand-500/20 hover:shadow-lg hover:-translate-y-0.5">Reservar Hora</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden p-2 text-slate-600" id="mobile-menu-btn" aria-label="Menú">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+  </div>
+</header>
+<!-- Mobile Nav spacing -->
+<div class="h-20"></div>
+
+<script>
+  // Simple mobile menu toggle logic could go here
+</script>
